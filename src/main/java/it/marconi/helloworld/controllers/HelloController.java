@@ -21,11 +21,16 @@ public class HelloController {
         return "hello-world-param";
     }
 
-    // MVC
-
-    //prova commit
-    for(int i=0; i<10; i++){
-        system.out("Debi");
+    @GetMapping("model")
+    public String greetModel(){
+        return "hello-world-model";
     }
+
+    //passaggio di parametri
+    @ModelAttribute("name") //name è il suo identificativo
+    public String handlerNome(){
+        return "Debi"; //debi è il valore che ho associato a "name"
+    }
+
     
 }
